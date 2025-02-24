@@ -4,6 +4,14 @@ An Android MRZ scanner which can utilize usb cameras based on [saki4510t/UVCCame
 
 OCR requires a high resolution. The default resolution set in the code is 1280x720. You can adjust the value in the code.
 
+Demo video:
+
+
+
+https://github.com/user-attachments/assets/6b470edb-f582-483f-8986-db0ac16aa147
+
+
+
 ## References
 
 * [UVCcamera-Opencv
