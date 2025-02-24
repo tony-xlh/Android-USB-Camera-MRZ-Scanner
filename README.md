@@ -2,6 +2,8 @@
 
 An Android MRZ scanner which can utilize usb cameras based on [saki4510t/UVCCamera](https://github.com/saki4510t/UVCCamera). [Dynamsoft Label Recognizer](https://www.dynamsoft.com/label-recognition/overview/) is used to recognize the MRZ text.
 
+OCR requires a high resolution. The default resolution set in the code is 1280x720. You can adjust the value in the code.
+
 ## References
 
 * [UVCcamera-Opencv
