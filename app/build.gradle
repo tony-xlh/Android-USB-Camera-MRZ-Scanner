@@ -33,6 +33,14 @@ dependencies {
     implementation("com.serenegiant:common:1.5.20") {
         exclude module: 'support-v4'
     }
+    // DLR
+    implementation 'com.dynamsoft:dynamsoftlabelrecognizer:3.4.20'
+    implementation 'com.dynamsoft:dynamsoftcapturevisionrouter:2.4.20'
+    implementation 'com.dynamsoft:dynamsoftlicense:3.4.20'
+    implementation 'com.dynamsoft:dynamsoftcore:3.4.20'
+    implementation 'com.dynamsoft:dynamsoftneuralnetwork:1.0.20'
+    implementation 'com.dynamsoft:dynamsoftimageprocessing:2.4.20'
+    implementation 'com.dynamsoft:dynamsoftmrz:3.4.20'
     implementation libs.appcompat
     implementation libs.material
     implementation libs.activity

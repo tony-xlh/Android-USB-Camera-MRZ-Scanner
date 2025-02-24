@@ -20,6 +20,9 @@ dependencyResolutionManagement {
         flatDir {
             dirs 'libs'
         }
+        maven {
+            url "https://download2.dynamsoft.com/maven/aar"
+        }
     }
 }
 
