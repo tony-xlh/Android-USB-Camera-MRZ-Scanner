@@ -29,7 +29,10 @@ android {
 }
 
 dependencies {
-
+    implementation fileTree(dir: 'libs', include: ['*.aar','*.jar'])
+    implementation("com.serenegiant:common:1.5.20") {
+        exclude module: 'support-v4'
+    }
     implementation libs.appcompat
     implementation libs.material
     implementation libs.activity
