@@ -9,7 +9,7 @@ android {
     defaultConfig {
         applicationId "com.tonyxlh.usbmrzscanner"
         minSdk 21
-        targetSdk 35
+        targetSdk 27
         versionCode 1
         versionName "1.0"
 
