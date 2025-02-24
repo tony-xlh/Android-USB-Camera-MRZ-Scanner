@@ -23,8 +23,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 }
 
@@ -34,12 +34,7 @@ dependencies {
         exclude module: 'support-v4'
     }
     // DLR
-    implementation 'com.dynamsoft:dynamsoftlabelrecognizer:3.4.20'
-    implementation 'com.dynamsoft:dynamsoftcapturevisionrouter:2.4.20'
-    implementation 'com.dynamsoft:dynamsoftlicense:3.4.20'
-    implementation 'com.dynamsoft:dynamsoftcore:3.4.20'
-    implementation 'com.dynamsoft:dynamsoftneuralnetwork:1.0.20'
-    implementation 'com.dynamsoft:dynamsoftimageprocessing:2.4.20'
+    implementation "com.dynamsoft:dynamsoftcapturevisionbundle:2.6.1002"
     implementation 'com.dynamsoft:dynamsoftmrz:3.4.20'
     implementation libs.appcompat
     implementation libs.material
