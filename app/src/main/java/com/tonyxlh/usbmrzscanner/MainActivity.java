@@ -20,6 +20,8 @@ import com.dynamsoft.cvr.CaptureVisionRouter;
 import com.dynamsoft.cvr.CaptureVisionRouterException;
 import com.dynamsoft.cvr.CapturedResult;
 import com.dynamsoft.dcp.CodeParser;
+import com.dynamsoft.dcp.CodeParserException;
+import com.dynamsoft.dcp.ParsedResultItem;
 import com.dynamsoft.dlr.RecognizedTextLinesResult;
 import com.dynamsoft.dlr.TextLineResultItem;
 import com.dynamsoft.license.LicenseManager;
@@ -29,6 +31,8 @@ import com.serenegiant.usb.UVCCamera;
 import com.serenegiant.usbcameracommon.UVCCameraHandler;
 import com.serenegiant.widget.CameraViewInterface;
 
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -1622,8 +1626,18 @@ public class MainActivity extends AppCompatActivity  implements CameraDialog.Cam
                                     linesBuilder.append(result.getText());
                                     linesBuilder.append("\n");
                                 }
-                                linesBuilder.append(bitmap.getWidth()+"x"+bitmap.getHeight());
-                                resultTextView.setText(linesBuilder.toString());
+                                try {
+                                    StringBuilder result = new StringBuilder();
+                                    ParsedResultItem item = mParser.parse(linesBuilder.toString().getBytes(StandardCharsets.UTF_8),"");
+                                    for (HashMap.Entry<String, String> entry : item.getParsedFields().entrySet()) {
+                                        String key = entry.getKey();
+                                        String value = entry.getValue();
+                                        result.append(key).append(": ").append(value).append("\n");
+                                    }
+                                    resultTextView.setText(result.toString());
+                                } catch (CodeParserException e) {
+                                    resultTextView.setText(e.getMessage());
+                                }
                             }
                         }
                     }
